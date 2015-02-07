@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', [ ])
+angular.module('myApp', [ 'ui.filters'])
 .controller('View1Ctrl', [function() {
     console.log("Making the http request for the json data....");
     this.simple="An M&M pairing project.";
@@ -609,5 +609,3 @@ angular.module('myApp', [ ])
     }
 ];
 }]);
-
-

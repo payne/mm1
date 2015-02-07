@@ -22,11 +22,19 @@
 
 <div ng-controller="View1Ctrl as view1"> 
    {{view1.simple}}
+
+<SELECT ng-model="selectCategory" ng-options="company.category for company
+    in view1.companies | unique:'category' | orderBy:'category'">
+          </SELECT>
    <ol>
-   <div ng-repeat="company in view1.companies">
+   <div ng-repeat="company in view1.companies | filter:selectCategory.category
+                      | orderBy:'name'">
+
        <li>{{company.name}}
          <br>
-       {{company.address}}</li>
+       {{company.address}}
+</li>
+
    </div>
  </ol>
 </div>
@@ -36,6 +44,7 @@
   -->
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-ui/build/angular-ui.js"></script>
   <script src="app.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
