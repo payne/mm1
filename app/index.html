@@ -22,6 +22,9 @@
 
 <div ng-controller="View1Ctrl as view1"> 
    {{view1.simple}}
+   <div ng-repeat="company in view1.companies">
+       {{company.name}}
+   </div>
 </div>
 
   <!-- In production use:
