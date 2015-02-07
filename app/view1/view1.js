@@ -11,7 +11,8 @@ angular.module('myApp.view1', ['ngRoute'])
 
 .controller('View1Ctrl', [function() {
     console.log("Making the http request for the json data....");
-        var companies=
+    this.simple="An M&M pairing project.";
+        this.companies=
 [
     {
         "address": "423 South 13th Street, Omaha, NE 68102, USA",
